@@ -2,7 +2,7 @@ import Foundation
 
 extension ControllerButton {
     /// Defaults match MyWhoosh's keyboard controls: + = K (shift up), − = I (shift down),
-    /// D-pad = arrow keys. A/B/Y/Z send their own letter.
+    /// D-pad = arrow keys, A = 1, B = U, Y = 2, Z = 3.
     var defaultKey: KeyChoice {
         switch self {
         case .plus: .named("K")
@@ -11,10 +11,10 @@ extension ControllerButton {
         case .navRight: .named("→")
         case .navUp: .named("↑")
         case .navDown: .named("↓")
-        case .a: .named("A")
-        case .b: .named("B")
-        case .y: .named("Y")
-        case .z: .named("Z")
+        case .a: .named("1")
+        case .b: .named("U")
+        case .y: .named("2")
+        case .z: .named("3")
         }
     }
 }

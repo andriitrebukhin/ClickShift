@@ -10,6 +10,10 @@ import Testing
         #expect(ControllerButton.navDown.defaultKey.name == "↓")
         #expect(ControllerButton.navLeft.defaultKey.name == "←")
         #expect(ControllerButton.navRight.defaultKey.name == "→")
+        #expect(ControllerButton.a.defaultKey.name == "1")
+        #expect(ControllerButton.b.defaultKey.name == "U")
+        #expect(ControllerButton.y.defaultKey.name == "2")
+        #expect(ControllerButton.z.defaultKey.name == "3")
     }
 
     @Test(arguments: ControllerButton.allCases)

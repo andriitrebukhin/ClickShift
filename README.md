@@ -116,9 +116,9 @@ Key presses go to the app in focus, so keep the app you want to control active.
 | `+` | `K` | Shift up (harder) |
 | `−` | `I` | Shift down (easier) |
 | D-pad ↑ ↓ ← → | `↑` `↓` `←` `→` | Arrow keys (← / → steer) |
-| A, B, Y, Z | `A`, `B`, `Y`, `Z` | — |
+| A, B, Y, Z | `1`, `U`, `2`, `3` | — |
 
-`K`, `I` and the arrow keys are MyWhoosh's keyboard controls. For A/B/Y/Z, ClickShift simply sends the matching letter.
+`K`, `I` and the arrow keys are MyWhoosh's keyboard controls. A, B, Y and Z send `1`, `U`, `2` and `3`.
 
 ## Troubleshooting
 
