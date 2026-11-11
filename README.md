@@ -40,7 +40,7 @@ On Click v2, ClickShift connects to the left unit, which passes on the right uni
 
 ## Download
 
-Get the latest `ClickShift.dmg` from the [**Releases**](https://github.com/andriitrebukhin/ClickShift/releases/latest) page. Open it and drag **ClickShift** onto the **Applications** folder.
+Get the latest `ClickShift.dmg` from the [**website**](https://andriitrebukhin.github.io/ClickShift/) or the [**Releases**](https://github.com/andriitrebukhin/ClickShift/releases/latest) page. Open it and drag **ClickShift** onto the **Applications** folder.
 
 The app isn't notarized by Apple, so macOS blocks it the first time you open it:
 

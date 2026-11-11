@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClickShift – Zwift Click as a Mac keyboard</title>
+<meta name="description" content="A free, open-source macOS menu-bar app that turns Zwift Click controller buttons into key presses. Shift gears in MyWhoosh from your handlebars.">
+<meta property="og:title" content="ClickShift">
+<meta property="og:description" content="Use a Zwift Click controller as a keyboard on your Mac.">
+<meta property="og:image" content="https://andriitrebukhin.github.io/ClickShift/icon.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+  :root {
+    --bg: #f5f9fe;
+    --card: #ffffff;
+    --text: #13202e;
+    --muted: #5b6b7c;
+    --line: #dbe5f0;
+    --accent: #2f8fe0;
+    --accent-text: #ffffff;
+    --plus: #2bb36f;
+    --minus: #f0675a;
+    --code-bg: #eef3f9;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1620;
+      --card: #17212d;
+      --text: #e8eef5;
+      --muted: #9aabbc;
+      --line: #263445;
+      --accent: #5aaef0;
+      --accent-text: #08121c;
+      --code-bg: #1f2b39;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  }
+  a { color: var(--accent); }
+  main { max-width: 760px; margin: 0 auto; padding: 56px 16px 32px; }
+
+  header { text-align: center; }
+  header img { width: 128px; height: 128px; }
+  h1 { font-size: 44px; line-height: 1.1; margin: 12px 0 8px; letter-spacing: -0.02em; }
+  .tagline { font-size: 20px; color: var(--muted); margin: 0 auto 28px; max-width: 520px; }
+
+  .download {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--accent); color: var(--accent-text);
+    text-decoration: none; font-weight: 600; font-size: 18px;
+    padding: 14px 28px; border-radius: 12px;
+  }
+  .download:hover { filter: brightness(1.06); }
+  .download svg { width: 20px; height: 20px; }
+  .meta { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+  .meta a { color: inherit; }
+
+  section { margin-top: 56px; }
+  h2 { font-size: 24px; margin: 0 0 16px; letter-spacing: -0.01em; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .feature { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .feature h3 { margin: 0 0 4px; font-size: 16px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 15px; }
+
+  table { width: 100%; border-collapse: collapse; background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  th { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; }
+  kbd, code {
+    font: 13px ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: var(--code-bg); border: 1px solid var(--line); border-radius: 5px; padding: 1px 6px;
+  }
+  .plus { color: var(--plus); font-weight: 700; }
+  .minus { color: var(--minus); font-weight: 700; }
+
+  ol { padding-left: 22px; margin: 0; }
+  ol li { margin-bottom: 8px; }
+  .note { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 12px 16px; color: var(--muted); font-size: 15px; margin-top: 16px; }
+  .scroll { overflow-x: auto; }
+  .keys { white-space: nowrap; }
+
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; text-align: center; }
+  footer p { margin: 6px 0; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="icon.png" alt="ClickShift icon" width="128" height="128">
+    <h1>ClickShift</h1>
+    <p class="tagline">Use a Zwift Click controller as a keyboard on your Mac. Shift gears in MyWhoosh right from your handlebars.</p>
+
+    <a id="download" class="download" href="https://github.com/andriitrebukhin/ClickShift/releases/latest">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+      <span id="download-label">Download for macOS</span>
+    </a>
+    <p class="meta"><span id="download-meta">Free and open source · macOS 13 or later</span> · <a href="https://github.com/andriitrebukhin/ClickShift">Source on GitHub</a></p>
+  </header>
+
+  <section>
+    <h2>Features</h2>
+    <div class="features">
+      <div class="feature"><h3>Native and light</h3><p>Swift and SwiftUI. Lives in your menu bar.</p></div>
+      <div class="feature"><h3>Any key, any app</h3><p>Map each button to the key you want. Works with any app that takes keyboard input.</p></div>
+      <div class="feature"><h3>Feels like a keyboard</h3><p>Hold a button and its key repeats, just like a real key.</p></div>
+      <div class="feature"><h3>Reconnects on its own</h3><p>If the controller drops, ClickShift picks it up again as soon as it's back.</p></div>
+      <div class="feature"><h3>Battery level</h3><p>See how much charge your controller has left.</p></div>
+      <div class="feature"><h3>Private</h3><p>No network access, no accounts, no tracking.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Supported controllers</h2>
+    <div class="scroll">
+    <table>
+      <tr><th>Controller</th><th>Buttons</th></tr>
+      <tr><td>Zwift Click (v1)</td><td><span class="plus">+</span> <span class="minus">−</span></td></tr>
+      <tr><td>Zwift Click v2</td><td><span class="plus">+</span> <span class="minus">−</span>, D-pad, A, B, Y, Z</td></tr>
+    </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Default keys</h2>
+    <div class="scroll">
+    <table>
+      <tr><th>Button</th><th>Key</th><th>In MyWhoosh</th></tr>
+      <tr><td><span class="plus">+</span></td><td><kbd>K</kbd></td><td>Shift up (harder)</td></tr>
+      <tr><td><span class="minus">−</span></td><td><kbd>I</kbd></td><td>Shift down (easier)</td></tr>
+      <tr><td>D-pad</td><td class="keys"><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd></td><td>Arrow keys</td></tr>
+      <tr><td>A, B, Y, Z</td><td class="keys"><kbd>1</kbd> <kbd>U</kbd> <kbd>2</kbd> <kbd>3</kbd></td><td>—</td></tr>
+    </table>
+    </div>
+    <p class="meta">Change any of them in the app's menu.</p>
+  </section>
+
+  <section>
+    <h2>Install</h2>
+    <ol>
+      <li>Download and open <strong>ClickShift.dmg</strong>, then drag <strong>ClickShift</strong> onto <strong>Applications</strong>.</li>
+      <li>Open ClickShift. macOS blocks it the first time because it isn't notarized by Apple. Close the warning, go to <em>System Settings › Privacy &amp; Security</em> and click <strong>Open Anyway</strong>.</li>
+      <li>Allow <strong>Bluetooth</strong> when asked, and turn ClickShift on in <em>System Settings › Privacy &amp; Security › Accessibility</em> so it can send key presses.</li>
+      <li>Press any button on your Click. ClickShift finds it and connects.</li>
+    </ol>
+    <p class="note">Updating? Remove ClickShift from the Accessibility list and add it again, because each new version has a new signature. To check your download, get the <code>.sha256</code> file from the release and run <code>shasum -a 256 -c ClickShift-&lt;version&gt;.dmg.sha256</code>.</p>
+  </section>
+
+  <footer>
+    <p><a href="https://github.com/andriitrebukhin/ClickShift">GitHub</a> · <a href="https://github.com/andriitrebukhin/ClickShift/releases">All releases</a> · <a href="https://github.com/andriitrebukhin/ClickShift/issues">Report an issue</a> · <a href="https://github.com/sponsors/andriitrebukhin">♥ Sponsor</a></p>
+    <p>MIT License. Not affiliated with Zwift. "Zwift" and "Zwift Click" are trademarks of Zwift, Inc.</p>
+  </footer>
+</main>
+
+<script>
+  // Point the button straight at the latest DMG. If GitHub's API can't be reached,
+  // the button keeps linking to the latest release page.
+  fetch("https://api.github.com/repos/andriitrebukhin/ClickShift/releases/latest")
+    .then(r => r.ok ? r.json() : Promise.reject(r.status))
+    .then(release => {
+      const dmg = (release.assets || []).find(a => a.name.endsWith(".dmg"));
+      if (!dmg) return;
+      document.getElementById("download").href = dmg.browser_download_url;
+      const version = release.tag_name.replace(/^v/, "");
+      const mb = (dmg.size / 1048576).toFixed(1);
+      document.getElementById("download-label").textContent = "Download ClickShift " + version;
+      document.getElementById("download-meta").textContent = mb + " MB · macOS 13 or later · free and open source";
+    })
+    .catch(() => {});
+</script>
+</body>
+</html>
